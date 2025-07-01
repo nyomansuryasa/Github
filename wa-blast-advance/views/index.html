@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WA Blast Advance</title>
+</head>
+<body>
+  <h1>WhatsApp Blast Advance</h1>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <p>Upload file CSV (format: nomor,nama):</p>
+    <input type="file" name="csvfile" required>
+    <br><br>
+    <textarea name="message" rows="5" cols="50" placeholder="Pesan Anda (gunakan {nama} untuk personalisasi)" required></textarea>
+    <br><br>
+    <button type="submit">Mulai Kirim</button>
+  </form>
+</body>
+</html>

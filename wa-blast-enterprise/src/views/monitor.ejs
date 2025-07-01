@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WA Blast Monitor</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; }
+        .stat { font-size: 20px; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h1>📊 WA Blast Dashboard</h1>
+
+    <form action="/upload/webupload" method="post" enctype="multipart/form-data">
+        <input type="file" name="csvfile" required />
+        <button type="submit">Upload CSV</button>
+    </form>
+
+    <div class="stat">Total Data: <b><%= total %></b></div>
+    <div class="stat">✅ Sent: <b><%= sent %></b></div>
+    <div class="stat">❌ Failed: <b><%= failed %></b></div>
+    <div class="stat">🕒 Pending: <b><%= pending %></b></div>
+
+    <script>
+        setTimeout(() => { location.reload(); }, 5000);
+    </script>
+</body>
+</html>

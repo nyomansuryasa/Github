@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>WA Blaster Dashboard</title>
+  <meta charset="UTF-8">
+  <script>
+    async function refresh() {
+      const res = await fetch('/dashboard');
+      const data = await res.json();
+
+      let html = '';
+      for (const session in data) {
+        const d = data[session];
+        html += `<h3>${session}</h3>
+                 <p>Total: ${d.total} | Sent: ${d.sent} | Failed: ${d.failed} | Pending: ${d.pending}</p>`;
+      }
+      document.getElementById('content').innerHTML = html;
+    }
+    setInterval(refresh, 2000);
+  </script>
+</head>
+<body>
+  <h1>WA Blaster Multi Session Dashboard</h1>
+  <div id="content">Loading...</div>
+</body>
+</html>
